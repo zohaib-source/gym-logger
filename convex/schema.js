@@ -30,7 +30,8 @@ export default defineSchema({
     weight: v.number(),
     reps: v.number(),
     date: v.number(), // Timestamp
-  }).index("by_user_exercise", ["userId", "exerciseId"])
+  })
+    .index("by_user_exercise", ["userId", "exerciseId"])
     .index("by_user_date", ["userId", "date"]),
 
   // Placeholder for future Habit/Calorie features
@@ -38,5 +39,22 @@ export default defineSchema({
     userId: v.string(),
     name: v.string(),
     completedDates: v.array(v.number()),
+  }).index("by_user", ["userId"]),
+
+  meals: defineTable({
+    userId: v.string(),
+    foodName: v.string(),
+    calories: v.number(),
+    protein: v.optional(v.number()),
+    carbs: v.optional(v.number()),
+    fat: v.optional(v.number()),
+    date: v.number(), // Timestamp for the day (e.g., midnight)
+    timestamp: v.number(), // Exact time
+  }).index("by_user_date", ["userId", "date"]),
+
+  routines: defineTable({
+    userId: v.string(),
+    name: v.string(),
+    exercises: v.array(v.id("exercises")),
   }).index("by_user", ["userId"]),
 });
