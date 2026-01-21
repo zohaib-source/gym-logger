@@ -185,7 +185,10 @@ export default function Dashboard() {
       {/* Navbar - Simplified for Dashboard */}
       <nav className="border-b border-gray-800 bg-[#111] sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
+          <NavLink
+            to="/"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+          >
             <div className="w-8 h-8 relative">
               <svg
                 viewBox="0 0 100 100"
@@ -202,7 +205,7 @@ export default function Dashboard() {
             <span className="text-xl font-bold tracking-tight italic">
               FORCE <span className="text-[#a3d114]">DASHBOARD</span>
             </span>
-          </div>
+          </NavLink>
 
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-2 text-gray-400 text-sm">

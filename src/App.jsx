@@ -60,8 +60,12 @@ if (!PUBLISHABLE_KEY) {
 // --- CLONED COMPONENTS START ---
 
 // 1. Logo
+// 1. Logo
 const Logo = () => (
-  <div className="flex items-center gap-3 select-none">
+  <Link
+    to="/"
+    className="flex items-center gap-3 select-none cursor-pointer hover:opacity-90 transition-opacity"
+  >
     <div className="w-10 h-10 md:w-12 md:h-12 relative">
       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 90 V 10 H 90 L 90 35 H 35 V 90 H 10 Z" fill="#a3d114" />
@@ -77,7 +81,7 @@ const Logo = () => (
         FITNESS & LOGGER
       </span>
     </div>
-  </div>
+  </Link>
 );
 
 // 2. SocialButton
